@@ -76,11 +76,11 @@ bool Transaction::rollback_transaction()
 
 bool Transaction::start_transaction()
 {
+    static char isc_tpb[] = {
+        isc_tpb_nowait
+    };
 	if (!trans)
 	{
-        static char isc_tbp[] = {
-        isc_tpb_nowait
-        };
 		if (isc_start_transaction(status, &trans, 1, &connection->db, (unsigned short) sizeof(isc_tpb), isc_tpb))
 		{
 			trans = 0;
