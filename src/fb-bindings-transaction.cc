@@ -2,6 +2,7 @@
 
 #include "./fb-bindings-transaction.h"
 #include "./fb-bindings-connection.h"
+#include "./../fb/include/ibase.h"
 
 Nan::Persistent<FunctionTemplate> Transaction::constructor_template;
 
