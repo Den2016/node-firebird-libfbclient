@@ -77,7 +77,10 @@ bool Transaction::rollback_transaction()
 bool Transaction::start_transaction()
 {
     static char isc_tpb[] = {
-        isc_tpb_nowait
+        isc_tpb_nowait,
+        isc_tpb_read,
+        isc_tpb_write,
+        isc_tpb_concurrency
     };
 	if (!trans)
 	{
