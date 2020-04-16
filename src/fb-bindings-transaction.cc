@@ -76,17 +76,9 @@ bool Transaction::rollback_transaction()
 
 bool Transaction::start_transaction()
 {
-    static char isc_tpb[] = {
-        isc_tpb_version1,
-        isc_tpb_nowait,
-        isc_tpb_read,
-        isc_tpb_write,
-        isc_tpb_concurrency
-    };
-    unsigned short sz = sizeof(isc_tpb);
 	if (!trans)
 	{
-		if (isc_start_transaction(status, &trans, 1, &connection->db, sz, &isc_tpb))
+		if (isc_start_transaction(status, &trans, 1, &connection->db, isc_tpb_size, isc_tpb))
 		{
 			trans = 0;
 			return false;
