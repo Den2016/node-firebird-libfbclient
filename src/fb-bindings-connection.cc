@@ -284,6 +284,8 @@ bool Connection::prepare_statement(XSQLDA **insqlda, XSQLDA **outsqlda, char *qu
      // Start Default Transaction If None Active
 	 if (!check_trans(&tr))
 	 {
+		return Nan::ThrowError("check_trans failed.");
+
 		 return false;
 		 //if (isc_start_transaction(status, &trans, 1, &db, 0, NULL)) return false;
 	 }
