@@ -77,7 +77,10 @@ bool Transaction::start_transaction()
 {
 	if (!trans)
 	{
-		if (isc_start_transaction(status, &trans, 1, &connection->db, 0, NULL))
+        static char isc_tbp[] = {
+        isc_tpb_nowait
+        };
+		if (isc_start_transaction(status, &trans, 1, &connection->db, (unsigned short) sizeof(isc_tpb), isc_tpb))
 		{
 			trans = 0;
 			return false;
