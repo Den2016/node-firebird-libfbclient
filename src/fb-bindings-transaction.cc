@@ -83,11 +83,11 @@ bool Transaction::start_transaction()
         isc_tpb_write,
         isc_tpb_concurrency
     };
+    unsigned short sz = sizeof(isc_tpb);
 	if (!trans)
 	{
-		if (isc_start_transaction(status, &trans, 1, &connection->db, (unsigned short) sizeof(isc_tpb), isc_tpb))
+		if (isc_start_transaction(status, &trans, 1, &connection->db, 0, NULL))
 		{
-    		return Nan::ThrowError("Could not start transaction.");
 			trans = 0;
 			return false;
 		}
