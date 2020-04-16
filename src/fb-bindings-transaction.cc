@@ -86,6 +86,7 @@ bool Transaction::start_transaction()
 	{
 		if (isc_start_transaction(status, &trans, 1, &connection->db, (unsigned short) sizeof(isc_tpb), &isc_tpb))
 		{
+        	strncpy(err_message, "Can`t start transaction. [Den2016]", MAX_ERR_MSG_LEN);
 			trans = 0;
 			return false;
 		}
