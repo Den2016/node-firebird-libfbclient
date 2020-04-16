@@ -78,7 +78,7 @@ bool Transaction::start_transaction()
 {
 	if (!trans)
 	{
-		if (isc_start_transaction(status, &trans, 1, &connection->db, isc_tpb_size, isc_tpb))
+		if (isc_start_transaction(status, &trans, 1, &connection->db, 0, NULL))
 		{
 			trans = 0;
 			return false;
