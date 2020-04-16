@@ -35,14 +35,6 @@ public:
 		TransReqType type;
 		bool result;
 	};
-    static char isc_tpb[] = {
-        isc_tpb_version1,
-        isc_tpb_nowait,
-        isc_tpb_read,
-        isc_tpb_write,
-        isc_tpb_concurrency
-    };
-    unsigned short isc_tpb_size = sizeof(isc_tpb);
 
 	Transaction(Connection *conn);
 	~Transaction();

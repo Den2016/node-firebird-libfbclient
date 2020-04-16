@@ -4,6 +4,15 @@
 #include "./fb-bindings-connection.h"
 #include <ibase.h>
 
+    static char isc_tpb[] = {
+        isc_tpb_version1,
+        isc_tpb_nowait,
+        isc_tpb_read,
+        isc_tpb_write,
+        isc_tpb_concurrency
+    };
+    unsigned short isc_tpb_size = sizeof(isc_tpb);
+
 Nan::Persistent<FunctionTemplate> Transaction::constructor_template;
 
 void Transaction::Initialize(v8::Local<v8::Object> target) {
