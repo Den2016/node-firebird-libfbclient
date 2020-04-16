@@ -87,6 +87,7 @@ bool Transaction::start_transaction()
 	{
 		if (isc_start_transaction(status, &trans, 1, &connection->db, (unsigned short) sizeof(isc_tpb), isc_tpb))
 		{
+    		return Nan::ThrowError("Could not start transaction.");
 			trans = 0;
 			return false;
 		}
