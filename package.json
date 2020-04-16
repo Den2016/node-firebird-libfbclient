@@ -11,7 +11,7 @@
     }
   ],
   "bugs": {
-    "url": "http://github.com/xdenser/node-firebird-libfbclient/issues"
+    "url": "http://github.com/Den2016/node-firebird-libfbclient/issues"
   },
   "licenses": [
     {
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/xdenser/node-firebird-libfbclient"
+    "url": "http://github.com/Den2016/node-firebird-libfbclient"
   },
   "dependencies": {
     "nan": "^2.10.0",
