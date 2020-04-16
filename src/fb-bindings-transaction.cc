@@ -86,7 +86,7 @@ bool Transaction::start_transaction()
     unsigned short sz = sizeof(isc_tpb);
 	if (!trans)
 	{
-		if (isc_start_transaction(status, &trans, 1, &connection->db, 0, NULL))
+		if (isc_start_transaction(status, &trans, 1, &connection->db, sz, &isc_tpb))
 		{
 			trans = 0;
 			return false;
